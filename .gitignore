@@ -1,2 +1,5 @@
 venv/
 .idea/
+myproject/db.sqlite3
+myproject/*/__pycache__/*
+myproject/boards/migrations/__pycache__/*
