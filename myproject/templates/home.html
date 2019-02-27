@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Boards</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 
 <body>
 <h1>Boards</h1>
-
 <table border="1">
     <thead>
     <tr>
@@ -17,10 +17,8 @@
         <th>Last Post</th>
     </tr>
     </thead>
-
     <tbody>
     {% for board in boards %}
-
     <tr>
         <td>
             {{ board.name }}<br>
@@ -30,7 +28,6 @@
         <td>0</td>
         <td></td>
     </tr>
-
     {% endfor %}
     </tbody>
 </table>
