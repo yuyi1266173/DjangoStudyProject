@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 from boards.views import home, board_topics, new_topic
 from boards.models import Board, Topic, Post
+from boards.forms import NewTopicForm
 
 
 class HomeTests(TestCase):
@@ -104,7 +105,9 @@ class NewTopicTests(TestCase):
         """
         url = reverse('new_topic', kwargs={'pk': 1})
         response = self.client.post(url, {})
+        form = response.context.get('form')
         self.assertEqual(response.status_code, 200)
+        self.assertTrue(form.errors)
 
     def test_new_topic_invalid_post_data_empty_fields(self):
         """
@@ -117,5 +120,11 @@ class NewTopicTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertFalse(Topic.objects.exists())
         self.assertFalse(Post.objects.exists())
+
+    def test_contains_form(self):
+        url = reverse('new_topic', kwargs={'pk': 1})
+        response = self.client.get(url)
+        form = response.context.get('form')
+        self.assertIsInstance(form, NewTopicForm)
 
 
