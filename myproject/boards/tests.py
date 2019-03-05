@@ -72,7 +72,7 @@ class NewTopicTests(TestCase):
 
     def test_new_topic_view_not_found_status_code(self):
         url = reverse('new_topic', kwargs={'pk': 99})
-        print("test_new_topic_view_success_status_code", url)
+        # print("test_new_topic_view_success_status_code", url)
         response = self.client.get(url)
         self.assertEqual(response.status_code, 404)
 
