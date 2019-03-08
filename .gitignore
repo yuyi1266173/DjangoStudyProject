@@ -3,3 +3,4 @@ venv/
 myproject/db.sqlite3
 myproject/*/__pycache__/*
 myproject/boards/migrations/__pycache__/*
+myproject/boards/templatetags/__pycache__/
