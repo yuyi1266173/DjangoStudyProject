@@ -126,5 +126,3 @@ class NewTopicTests(TestCase):
         response = self.client.get(url)
         form = response.context.get('form')
         self.assertIsInstance(form, NewTopicForm)
-
-

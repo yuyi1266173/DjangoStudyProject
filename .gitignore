@@ -4,3 +4,5 @@ myproject/db.sqlite3
 myproject/*/__pycache__/*
 myproject/boards/migrations/__pycache__/*
 myproject/boards/templatetags/__pycache__/
+myproject/accounts/tests/__pycache__/
+myproject/boards/tests/__pycache__/
